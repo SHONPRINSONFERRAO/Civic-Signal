@@ -1,0 +1,13 @@
+id,timestamp,area,category_raw,description,source,status
+CS-001,2026-07-06T08:10:00,Old Town,roads,"Large pothole near the school crosswalk has caused two bicycle accidents this week.",citizen_portal,open
+CS-002,2026-07-06T08:45:00,Riverfront,sanitation,"Overflowing trash bins along the promenade are attracting pests and smell terrible.",mobile_app,open
+CS-003,2026-07-06T09:00:00,North Park,utilities,"Three streetlights are dark near the playground and parents feel unsafe after sunset.",hotline,open
+CS-004,2026-07-06T09:20:00,Downtown,traffic,"Traffic signal at King Street is stuck on red and causing major congestion.",citizen_portal,open
+CS-005,2026-07-06T09:40:00,East Market,accessibility,"Wheelchair ramp outside the clinic is blocked by construction barriers.",community_center,open
+CS-006,2026-07-06T10:05:00,Riverfront,environment,"Residents report illegal dumping behind the bus depot with waste piling up for days.",mobile_app,open
+CS-007,2026-07-06T10:40:00,North Park,safety,"Broken fence in the park exposes children to a steep drop near the creek.",citizen_portal,open
+CS-008,2026-07-06T11:10:00,Old Town,water,"Water leak on Cedar Lane has been flowing for two days and may flood nearby shops.",hotline,open
+CS-009,2026-07-06T11:25:00,Downtown,public space,"Graffiti and shattered glass remain at the main plaza after the weekend event.",mobile_app,open
+CS-010,2026-07-06T11:50:00,Harbor District,utilities,"Power outage affecting pharmacy refrigeration and several elderly residents.",hotline,open
+CS-011,2026-07-06T12:05:00,East Market,roads,"Missing pedestrian crossing paint near the school entrance is creating a hazard.",citizen_portal,open
+CS-012,2026-07-06T12:30:00,Riverfront,sanitation,"Missed garbage collection for the second time this week on Marina Block A.",citizen_portal,open

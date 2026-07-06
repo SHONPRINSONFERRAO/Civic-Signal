@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CivicSignal</title>
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">AI for Better Living and Smarter Communities</p>
+          <h1>CivicSignal</h1>
+          <p class="lede">
+            Turn citizen complaints into clear priorities, explainable AI insights, and faster municipal action.
+          </p>
+        </div>
+      </header>
+
+      <section class="toolbar">
+        <div class="toolbar-card">
+          <h2>Load Data</h2>
+          <p>Use the sample dataset or upload a CSV with `timestamp`, `area`, and `description` columns.</p>
+          <div class="toolbar-actions">
+            <button id="load-sample">Load Sample Dataset</button>
+            <label class="upload-button">
+              <input id="csv-upload" type="file" accept=".csv" />
+              Upload CSV
+            </label>
+          </div>
+          <p id="status-message" class="status-message">Ready to analyze community feedback.</p>
+        </div>
+        <div class="toolbar-card">
+          <h2>Decision Flow</h2>
+          <ol>
+            <li>Ingest complaints from service channels.</li>
+            <li>Score urgency, category, and recommended owner.</li>
+            <li>Surface hotspots and next actions for city teams.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="kpi-grid" id="kpi-grid"></section>
+
+      <section class="content-grid">
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Issue Categories</h2>
+            <span class="panel-subtitle">Service demand</span>
+          </div>
+          <div id="category-chart" class="bar-list empty-state">Load data to view category trends.</div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-header">
+            <h2>Neighborhood Hotspots</h2>
+            <span class="panel-subtitle">Area / site</span>
+          </div>
+          <div id="area-chart" class="bar-list empty-state">No hotspot analysis yet.</div>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel insights-panel">
+          <div class="panel-header">
+            <h2>AI Insights</h2>
+            <span class="panel-subtitle" id="engine-badge">Heuristic engine active</span>
+          </div>
+          <p id="insight-summary" class="insight-summary">Upload or load a dataset to generate an overview.</p>
+          <div class="insight-columns">
+            <div>
+              <h3>Anomalies</h3>
+              <ul id="anomaly-list" class="bullet-list"></ul>
+            </div>
+            <div>
+              <h3>Recommended Actions</h3>
+              <ul id="action-list" class="bullet-list"></ul>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel chat-panel">
+          <div class="panel-header">
+            <h2>Ask CivicSignal</h2>
+            <span class="panel-subtitle">Natural-language decision support</span>
+          </div>
+          <form id="ask-form">
+            <textarea
+              id="question-input"
+              rows="4"
+              placeholder="What should the city fix first this week?"
+            ></textarea>
+            <button type="submit">Generate Answer</button>
+          </form>
+          <div id="chat-response" class="chat-response">Questions and answers will appear here.</div>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="panel table-panel">
+          <div class="panel-header">
+            <h2>Urgent Queue</h2>
+            <span class="panel-subtitle">Highest-priority complaints</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>Category</th>
+                  <th>Urgency</th>
+                  <th>Recommended Action</th>
+                </tr>
+              </thead>
+              <tbody id="urgent-table">
+                <tr>
+                  <td colspan="4" class="empty-row">No urgent issues yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <article class="panel table-panel">
+          <div class="panel-header">
+            <h2>Recent Complaints</h2>
+            <span class="panel-subtitle">Grounding data for explainable AI</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Timestamp</th>
+                  <th>Area</th>
+                  <th>Summary</th>
+                  <th>Department</th>
+                </tr>
+              </thead>
+              <tbody id="recent-table">
+                <tr>
+                  <td colspan="4" class="empty-row">No complaint data loaded.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+
+      <section class="full-width-section">
+        <details class="panel collapsible-panel">
+          <summary>
+            <span>All Complaints</span>
+            <span class="panel-subtitle">Expand to inspect the full grounding dataset</span>
+          </summary>
+          <div class="table-wrap details-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Area</th>
+                  <th>Category</th>
+                  <th>Description</th>
+                  <th>Urgency</th>
+                  <th>Department</th>
+                </tr>
+              </thead>
+              <tbody id="all-complaints-table">
+                <tr>
+                  <td colspan="6" class="empty-row">No complaints available yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+    </div>
+
+    <script src="/assets/app.js"></script>
+
+  </body>
+</html>
